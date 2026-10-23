@@ -1,0 +1,360 @@
+/**
+ * @file mockData.js
+ * @description Centralized mock data store for MediNest Healthcare Center.
+ * Supplies realistic data for services, time slots, doctors, appointments,
+ * users, and reviews, allowing seamless offline demo and immediate backend switch.
+ */
+
+export const SERVICES_DATA = [
+  {
+    id: 'teeth-orthodontics',
+    title: 'Teeth Orthodontics',
+    shortDesc: 'Comprehensive orthodontic treatments including braces and aligners to correct alignment.',
+    iconName: 'Smile',
+    badgeColor: 'bg-rose-50 text-rose-500',
+    bannerImage: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800',
+    price: 150,
+    slots: [
+      { id: 's1', time: '08:00 AM - 09:00 AM', spaces: 5 },
+      { id: 's2', time: '10:05 AM - 11:30 AM', spaces: 3 },
+      { id: 's3', time: '01:00 PM - 02:00 PM', spaces: 4 },
+      { id: 's4', time: '04:00 PM - 05:00 PM', spaces: 2 },
+      { id: 's5', time: '06:00 PM - 07:00 PM', spaces: 6 },
+    ],
+  },
+  {
+    id: 'cosmetic-dentistry',
+    title: 'Cosmetic Dentistry',
+    shortDesc: 'Smile design, veneers, bonding, and aesthetic contouring for your brightest smile.',
+    iconName: 'Sparkles',
+    badgeColor: 'bg-orange-50 text-orange-500',
+    bannerImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800',
+    price: 180,
+    slots: [
+      { id: 's6', time: '09:00 AM - 10:00 AM', spaces: 4 },
+      { id: 's7', time: '11:30 AM - 12:30 PM', spaces: 2 },
+      { id: 's8', time: '02:30 PM - 03:30 PM', spaces: 5 },
+      { id: 's9', time: '05:00 PM - 06:00 PM', spaces: 3 },
+    ],
+  },
+  {
+    id: 'teeth-cleaning',
+    title: 'Teeth Cleaning',
+    shortDesc: 'Deep scaling, plaque polishing, and preventative hygiene sessions with gentle care.',
+    iconName: 'ShieldCheck',
+    badgeColor: 'bg-pink-50 text-pink-500',
+    bannerImage: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800',
+    price: 120,
+    slots: [
+      { id: 's10', time: '08:30 AM - 09:30 AM', spaces: 6 },
+      { id: 's11', time: '10:00 AM - 11:00 AM', spaces: 5 },
+      { id: 's12', time: '01:30 PM - 02:30 PM', spaces: 4 },
+      { id: 's13', time: '03:30 PM - 04:30 PM', spaces: 3 },
+    ],
+  },
+  {
+    id: 'cavity-protection',
+    title: 'Cavity Protection',
+    shortDesc: 'Fluoride treatments, resin sealants, and early decay detection procedures.',
+    iconName: 'Activity',
+    badgeColor: 'bg-cyan-50 text-cyan-600',
+    bannerImage: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800',
+    price: 110,
+    slots: [
+      { id: 's14', time: '09:30 AM - 10:30 AM', spaces: 3 },
+      { id: 's15', time: '12:00 PM - 01:00 PM', spaces: 5 },
+      { id: 's16', time: '03:00 PM - 04:00 PM', spaces: 2 },
+      { id: 's17', time: '06:00 PM - 07:00 PM', spaces: 4 },
+    ],
+  },
+  {
+    id: 'pediatric-dental',
+    title: 'Pediatric Dental',
+    shortDesc: 'Gentle, friendly oral healthcare designed specially for toddlers, kids, and teens.',
+    iconName: 'HeartHandshake',
+    badgeColor: 'bg-purple-50 text-purple-600',
+    bannerImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800',
+    price: 130,
+    slots: [
+      { id: 's18', time: '10:00 AM - 11:00 AM', spaces: 4 },
+      { id: 's19', time: '11:30 AM - 12:30 PM', spaces: 3 },
+      { id: 's20', time: '02:00 PM - 03:00 PM', spaces: 4 },
+    ],
+  },
+  {
+    id: 'oral-surgery',
+    title: 'Oral Surgery',
+    shortDesc: 'Safe tooth extractions, wisdom tooth surgery, and bone grafting under sedation.',
+    iconName: 'Stethoscope',
+    badgeColor: 'bg-emerald-50 text-emerald-600',
+    bannerImage: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800',
+    price: 250,
+    slots: [
+      { id: 's21', time: '09:00 AM - 10:30 AM', spaces: 2 },
+      { id: 's22', time: '01:00 PM - 02:30 PM', spaces: 2 },
+      { id: 's23', time: '04:00 PM - 05:30 PM', spaces: 3 },
+    ],
+  },
+];
+
+export const DOCTORS_DATA = [
+  {
+    id: 'doc-1',
+    name: 'Dr. Ruby Perrin',
+    degree: 'MBBS, MD - General Medicine & Dental Surgery',
+    specialty: 'Teeth Orthodontics',
+    rating: 5,
+    reviewsCount: 142,
+    location: 'Dhanmondi, 32, Dhaka - Bangladesh',
+    availableDate: 'Available on Fri, 24 Oct',
+    price: 15,
+    avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=500',
+    featured: true,
+    tags: ['Dental Filling', 'Teeth Whitening'],
+    about:
+      'Dr. Ruby Perrin is an acclaimed specialist with over 12 years of hands-on clinical experience in orthodontics, smile aesthetics, and conservative dentistry. She is dedicated to patient comfort and utilizes state-of-the-art dental diagnostic tools.',
+    education: [
+      { institution: 'American Dental Medical University', degree: 'BDS', year: '1998 - 2003' },
+      { institution: 'American Dental Medical University', degree: 'MDS', year: '2004 - 2007' },
+    ],
+    experience: [
+      { role: 'Glowing Smiles Dental Clinic', period: '2007 - Present (5 years)' },
+      { role: 'Comfort Care Dental Clinic', period: '2005 - 2007 (2 years)' },
+      { role: 'Dream Smile Dental Practice', period: '2003 - 2005 (2 years)' },
+    ],
+    awards: [
+      { title: 'Humanitarian Award', year: 'May 2017', desc: 'Honored for exceptional community outreach and emergency dental treatment.' },
+      { title: 'Certificate for International Volunteer Service', year: 'March 2011', desc: 'Awarded for volunteer dental camps in rural medical missions.' },
+      { title: 'The Dental Professional of The Year Award', year: 'July 2008', desc: 'Recognized for pioneering minimal invasive restorative techniques.' },
+    ],
+    services: [
+      'Tooth Cleaning',
+      'Root Canal Therapy',
+      'Implants',
+      'Composite Bonding',
+      'Fissure Sealants',
+      'Surgical Extractions',
+    ],
+    specializations: [
+      'Children Care',
+      'Dental Care',
+      'Oral and Maxillofacial Surgery',
+      'Orthodontist',
+      'Periodontist',
+      'Prosthodontics',
+    ],
+    businessHours: [
+      { day: 'Monday', hours: '09:00 AM - 05:00 PM' },
+      { day: 'Tuesday', hours: '09:00 AM - 05:00 PM' },
+      { day: 'Wednesday', hours: '09:00 AM - 05:00 PM' },
+      { day: 'Thursday', hours: '09:00 AM - 05:00 PM' },
+      { day: 'Friday', hours: '10:00 AM - 02:00 PM' },
+      { day: 'Saturday - Sunday', hours: 'Closed' },
+    ],
+  },
+  {
+    id: 'doc-2',
+    name: 'Dr. Kazi Rahman',
+    degree: 'BDS, FCPS - Oral & Maxillofacial Surgery',
+    specialty: 'Oral Surgery',
+    rating: 5,
+    reviewsCount: 98,
+    location: 'Gulshan 2, Dhaka - Bangladesh',
+    availableDate: 'Available on Mon, 27 Oct',
+    price: 15,
+    avatar: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=500',
+    featured: false,
+    tags: ['Wisdom Tooth', 'Bone Grafting'],
+    about:
+      'Dr. Kazi Rahman is renowned for pain-free surgical tooth extractions and maxillofacial reconstructive operations. He has treated thousands of complex surgical cases with high patient satisfaction.',
+    education: [
+      { institution: 'Dhaka Dental College', degree: 'BDS', year: '2000 - 2005' },
+      { institution: 'Bangladesh College of Physicians', degree: 'FCPS', year: '2006 - 2010' },
+    ],
+    experience: [
+      { role: 'MediNest Head Surgeon', period: '2012 - Present' },
+      { role: 'Central Care Hospital', period: '2008 - 2012' },
+    ],
+    awards: [
+      { title: 'Best Surgical Excellence', year: '2019', desc: 'Outstanding clinical surgical contributions.' },
+    ],
+    services: ['Wisdom Tooth Extraction', 'Jaw Realignment', 'Dental Implants', 'Cyst Removal'],
+    specializations: ['Maxillofacial Surgery', 'Trauma Care', 'Implantology'],
+    businessHours: [
+      { day: 'Sunday - Thursday', hours: '10:00 AM - 06:00 PM' },
+      { day: 'Friday', hours: 'Closed' },
+    ],
+  },
+  {
+    id: 'doc-3',
+    name: 'Dr. Mahfuzur Rahman',
+    degree: 'MBBS, MS - Pediatric Dentistry & Orthodontics',
+    specialty: 'Pediatric Dental',
+    rating: 5,
+    reviewsCount: 115,
+    location: 'Uttara Sector 7, Dhaka - Bangladesh',
+    availableDate: 'Available on Wed, 29 Oct',
+    price: 15,
+    avatar: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=500',
+    featured: false,
+    tags: ['Child Friendly', 'Preventive Care'],
+    about:
+      'Specialized in childhood oral health, habit correction, and preventive sealants. Dr. Mahfuzur creates a warm, enjoyable atmosphere where children feel safe and relaxed.',
+    education: [
+      { institution: 'Sir Salimullah Medical College', degree: 'MBBS', year: '2002 - 2007' },
+      { institution: 'National Institute of Health', degree: 'MS', year: '2008 - 2011' },
+    ],
+    experience: [
+      { role: 'Senior Pediatric Consultant', period: '2013 - Present' },
+    ],
+    awards: [
+      { title: 'Pediatric Smile Award', year: '2021', desc: 'Dedication to young patient dental care.' },
+    ],
+    services: ['Fluoride Application', 'Cavity Prevention', 'Early Braces', 'Baby Tooth Pulpotomy'],
+    specializations: ['Pediatric Dental', 'Sedation Dentistry', 'Growth Guidance'],
+    businessHours: [
+      { day: 'Saturday - Thursday', hours: '09:00 AM - 04:00 PM' },
+    ],
+  },
+];
+
+export const INITIAL_APPOINTMENTS = [
+  {
+    id: 'apt-01',
+    name: 'Wade Warren',
+    userEmail: 'wade.warren@example.com',
+    date: '1/31/24',
+    time: '06:41 pm',
+    treatment: 'Cavity Protection',
+    status: 'paid',
+    transactionId: 'dfadfjaksdjf24sdfds',
+    price: 200,
+  },
+  {
+    id: 'apt-02',
+    name: 'Arlene McCoy',
+    userEmail: 'arlene.mccoy@example.com',
+    date: '10/28/25',
+    time: '02:30 pm',
+    treatment: 'Cavity Protection',
+    status: 'unpaid',
+    price: 200,
+  },
+  {
+    id: 'apt-03',
+    name: 'Albert Flores',
+    userEmail: 'albert.flores@example.com',
+    date: '9/23/25',
+    time: '10:32 pm',
+    treatment: 'Cavity Protection',
+    status: 'unpaid',
+    price: 200,
+  },
+  {
+    id: 'apt-04',
+    name: 'Eleanor Pena',
+    userEmail: 'eleanor.pena@example.com',
+    date: '8/30/25',
+    time: '10:41 pm',
+    treatment: 'Cavity Protection',
+    status: 'unpaid',
+    price: 200,
+  },
+  {
+    id: 'apt-05',
+    name: 'Jerome Bell',
+    userEmail: 'jerome.bell@example.com',
+    date: '8/21/25',
+    time: '05:36 pm',
+    treatment: 'Cavity Protection',
+    status: 'unpaid',
+    price: 200,
+  },
+  {
+    id: 'apt-06',
+    name: 'Cameron Williamson',
+    userEmail: 'cameron.williamson@example.com',
+    date: '9/4/25',
+    time: '04:15 am',
+    treatment: 'Cavity Protection',
+    status: 'unpaid',
+    price: 200,
+  },
+  {
+    id: 'apt-07',
+    name: 'Courtney Henry',
+    userEmail: 'courtney.henry@example.com',
+    date: '7/27/25',
+    time: '07:40 am',
+    treatment: 'Cavity Protection',
+    status: 'unpaid',
+    price: 200,
+  },
+];
+
+export const INITIAL_USERS = [
+  { id: 'usr-1', email: 'debbie.baker@example.com', name: 'Debbie Baker', role: 'admin', favoriteColor: 'Teal' },
+  { id: 'usr-2', email: 'nathan.roberts@example.com', name: 'Nathan Roberts', role: 'user', favoriteColor: 'Blue' },
+  { id: 'usr-3', email: 'georgia.young@example.com', name: 'Georgia Young', role: 'user', favoriteColor: 'Emerald' },
+  { id: 'usr-4', email: 'debra.holt@example.com', name: 'Debra Holt', role: 'user', favoriteColor: 'Peach' },
+  { id: 'usr-5', email: 'tim.jennings@example.com', name: 'Tim Jennings', role: 'user', favoriteColor: 'Violet' },
+  { id: 'usr-6', email: 'sara.cruz@example.com', name: 'Sara Cruz', role: 'user', favoriteColor: 'Amber' },
+  { id: 'usr-7', email: 'willie.jennings@example.com', name: 'Willie Jennings', role: 'user', favoriteColor: 'Cyan' },
+];
+
+export const TESTIMONIALS_DATA = [
+  {
+    id: 'rev-1',
+    name: 'Awlad Hossain',
+    role: 'Product Designer',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',
+    comment:
+      'The clinic atmosphere at MediNest is so welcoming and pristine. Dr. Ruby fixed my orthodontic alignment with complete precision. The appointment booking and dashboard make tracking checkups effortless.',
+    rating: 5,
+  },
+  {
+    id: 'rev-2',
+    name: 'Farhana Shanta',
+    role: 'Business Consultant',
+    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200',
+    comment:
+      'I was very nervous about oral surgery, but the expert team here guided me calmly through every step. Minimal recovery time and zero post-op pain. Highly recommended!',
+    rating: 5,
+  },
+  {
+    id: 'rev-3',
+    name: 'Rashedul Karim',
+    role: 'Software Architect',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
+    comment:
+      'State-of-the-art diagnostic machinery combined with genuine medical empathy. MediNest has set a new benchmark for modern healthcare in Bangladesh.',
+    rating: 5,
+  },
+];
+
+export const QUICK_INFO_CARDS = [
+  {
+    id: 'info-hours',
+    title: 'Opening Hours',
+    desc: 'Open 9.00 am to 5.00pm Everyday',
+    icon: 'Clock',
+    bgColor: 'bg-[#07332F]',
+    textColor: 'text-white',
+  },
+  {
+    id: 'info-location',
+    title: 'Our Locations',
+    desc: 'Dhanmondi 17, Dhaka - 1200, Bangladesh',
+    icon: 'MapPin',
+    bgColor: 'bg-[#F7A582]',
+    textColor: 'text-white',
+  },
+  {
+    id: 'info-contact',
+    title: 'Contact Us',
+    desc: '+88 01750 00 00 00 \n+88 01750 00 00 00',
+    icon: 'PhoneCall',
+    bgColor: 'bg-[#07332F]',
+    textColor: 'text-white',
+  },
+];

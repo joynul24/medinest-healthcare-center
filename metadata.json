@@ -1,0 +1,6 @@
+{
+  "name": "MediNest - Modern Healthcare & Doctor Appointment Center",
+  "description": "Full-stack ready healthcare center and doctor appointment booking platform with admin and user dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
