@@ -1,10 +1,3 @@
-/**
- * @file AuthContext.jsx
- * @description Provides comprehensive authentication state with Firebase Auth,
- * Google OAuth, interactive Google Account Chooser popup, MongoDB user synchronization,
- * and JWT token management.
- */
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import {
   signInWithEmailAndPassword,

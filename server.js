@@ -1,9 +1,3 @@
-/**
- * @file server.js
- * @description Express.js full-stack server integrating MongoDB Atlas, JWT authentication,
- * and Vite SPA middleware. Serves frontend and secure healthcare backend APIs on Port 3000.
- */
-
 import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
@@ -28,16 +22,15 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 3000;
 const JWT_SECRET =
-  process.env.ACCESS_TOKEN_SECRET ||
-  '6fa9cf3ea80a6955ce8075c9bcf2c27a063b2ec5a0cfca52832b8755e992adfe9efd58a31e81920bc7552e3e8f4dfff55753691755b00fb38241f29787496bf6';
+  process.env.ACCESS_TOKEN_SECRET;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 // MongoDB Atlas URI
-const dbName = process.env.DB_NAME || 'medinest-healthcare-center';
-const dbPass = process.env.DB_PASS || 'Tw8qitj4qflOnWVq';
+const dbName = process.env.DB_NAME;
+const dbPass = process.env.DB_PASS;
 const uri =
   process.env.MONGODB_URI ||
   `mongodb+srv://${dbName}:${dbPass}@cluster0.svgbh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
